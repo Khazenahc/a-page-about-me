@@ -1,0 +1,133 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.first-title {
+  text-align: right;
+  margin-bottom: 5rem;
+  font-family: 'Luminari', fantasy;
+  font-style: oblique;
+  font-weight: bold;
+  font-stretch: semi-expanded;
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: min(100% - 2rem, 1300px);
+  min-height: 70vh;
+  margin-inline: auto;
+  padding: 2rem;
+  animation: fade-in-right 1.5s forwards;
+}
+
+.hero__heading {
+  font-size: 4rem;
+  max-width: 25ch;
+  margin-bottom: 2rem;
+}
+
+.hero__subheading {
+  font-size: 1.75rem;
+  max-width: 50ch;
+}
+
+.hero__buttons {
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero__buttons > button {
+  padding: 0.7rem 2rem;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero__buttons > .more-about-me-btn {
+  background: transparent;
+  border: 3px solid darkslategray;
+  color: darkslategray;
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+}
+
+.hero__buttons > .more-about-me-btn:hover {
+  transform: scale(1.07);
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+}
+
+.hero__buttons > .contact-me-btn {
+  background: transparent;
+  border: 3px solid darkslategray;
+  color: darkslategray;
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+}
+
+.hero__buttons > .contact-me-btn:hover {
+  transform: scale(1.07);
+  transition: all 300ms ease-in-out;
+}
+
+.hero__image > img {
+  width: 300px;
+  height: 300px;
+}
+
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+ 
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@media (prefers-reduced-motion) {
+  .hero__container {
+    animation: none;
+  }
+
+  .hero__buttons > .more-about-me-btn:hover {
+    transform: none;
+    transition: none;
+  }
+
+  .hero__buttons > .contact-me-btn:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 830px) {
+  .hero__subheading {
+    max-width: 25ch;
+  }
+}
+
+@media (max-width: 770px) {
+  .hero__container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero__text {
+    text-align: center;
+  }
+
+  .hero__buttons {
+    justify-content: center;
+  }
+}
